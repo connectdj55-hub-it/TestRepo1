@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202421">
+  <meta name="description" content="A considered approach to spaces that feel like you. Meet Atelier North, an independent interior design studio." />
+  <title>Atelier North — Thoughtful spaces, beautifully lived in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #202421;
+      --ink-soft: #292e2a;
+      --paper: #f3f0e8;
+      --muted: #aaa99e;
+      --gold: #c9ad73;
+      --gold-light: #dec999;
+      --line: rgba(243,240,232,.16);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 5px; }
+    .wrap { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow::before { width: 25px; height: 1px; background: currentColor; content: ""; }
+    .topbar { position: absolute; z-index: 3; inset: 0 0 auto; }
+    .nav { height: 88px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 17px; letter-spacing: .04em; }
+    .brand-mark { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid var(--gold); color: var(--gold); font-size: 12px; font-family: var(--sans); }
+    .nav-links { display: flex; align-items: center; gap: 35px; color: rgba(243,240,232,.78); font-size: 11px; }
+    .nav-links a:not(.nav-cta) { transition: color .25s ease; }
+    .nav-links a:not(.nav-cta):hover { color: var(--gold-light); }
+    .nav-cta { padding: 12px 17px; border: 1px solid rgba(201,173,115,.65); color: var(--gold-light); transition: color .25s, background .25s, border-color .25s; }
+    .nav-cta:hover { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+    .hero { position: relative; display: grid; min-height: 760px; min-height: min(850px, 100svh); align-items: center; overflow: hidden; isolation: isolate; }
+    .hero::before { position: absolute; z-index: -2; inset: 0 0 0 36%; background: linear-gradient(90deg, var(--ink) 0%, rgba(32,36,33,.42) 32%, rgba(32,36,33,.08) 100%), linear-gradient(0deg, rgba(32,36,33,.4), transparent 40%), url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85") center 52%/cover; content: ""; animation: arrive 1.2s cubic-bezier(.2,.8,.2,1) both; }
+    .hero::after { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, var(--ink) 0%, rgba(32,36,33,.9) 21%, transparent 82%); content: ""; }
+    @keyframes arrive { from { opacity: .35; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
+    .hero-content { padding-top: 105px; max-width: 650px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin: 27px 0 24px; font: 400 clamp(52px, 6.5vw, 88px)/1.04 var(--serif); letter-spacing: -.045em; }
+    h1 span { color: var(--gold-light); font-style: italic; }
+    .hero-copy { max-width: 420px; margin-bottom: 34px; color: rgba(243,240,232,.72); font-size: 14px; line-height: 1.9; }
+    .button { position: relative; display: inline-flex; min-height: 51px; align-items: center; justify-content: center; gap: 24px; padding: 0 19px; background: var(--gold); color: var(--ink); font-size: 11px; font-weight: 600; transition: background .25s, transform .25s; }
+    .button span { font-size: 18px; font-weight: 400; transition: transform .25s; }
+    .button:hover { transform: translateY(-2px); background: var(--gold-light); }
+    .button:hover span { transform: translateX(4px); }
+    .hero-note { position: absolute; right: 32px; bottom: 35px; display: flex; align-items: center; gap: 12px; color: rgba(243,240,232,.76); font-size: 9px; letter-spacing: .17em; text-transform: uppercase; writing-mode: vertical-rl; }
+    .hero-note::after { width: 1px; height: 48px; background: var(--gold); content: ""; }
+    .intro { padding: 105px 0 110px; background: var(--paper); color: var(--ink); }
+    .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; align-items: start; }
+    .intro .eyebrow { margin-top: 14px; color: #887349; }
+    .intro h2 { max-width: 680px; margin: 0; font: 400 clamp(34px, 4.2vw, 54px)/1.2 var(--serif); letter-spacing: -.03em; }
+    .intro h2 em { color: #947b4d; }
+    .services { padding: 110px 0 120px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 51px; }
+    .section-head h2 { margin: 18px 0 0; font: 400 clamp(36px, 4.3vw, 55px)/1.12 var(--serif); letter-spacing: -.035em; }
+    .section-head > p { max-width: 300px; margin: 0 0 4px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .card { position: relative; min-height: 255px; padding: 30px 30px 28px 0; transition: background .3s, padding .3s; }
+    .card + .card { padding-left: 30px; border-left: 1px solid var(--line); }
+    .card:hover { background: rgba(255,255,255,.025); }
+    .card-number { color: var(--gold); font: 13px var(--serif); }
+    .card h3 { margin: 37px 0 11px; font: 400 24px var(--serif); }
+    .card p { max-width: 290px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .card-arrow { position: absolute; right: 20px; bottom: 29px; color: var(--gold); opacity: 0; transform: translate(-5px, 5px); transition: opacity .25s, transform .25s; }
+    .card:hover .card-arrow { opacity: 1; transform: translate(0,0); }
+    .testimonial { position: relative; padding: 105px 0 110px; overflow: hidden; background: #292e2a; text-align: center; }
+    .testimonial::before { position: absolute; top: -125px; left: 50%; width: 1px; height: 190px; background: rgba(201,173,115,.55); content: ""; }
+    .quote-mark { margin-bottom: 15px; color: var(--gold); font: 68px/.8 var(--serif); }
+    blockquote { max-width: 790px; margin: 0 auto 31px; font: 400 clamp(24px, 3.4vw, 39px)/1.45 var(--serif); letter-spacing: -.02em; }
+    .quote-credit { color: var(--gold-light); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    .quote-credit span { display: block; margin-top: 8px; color: var(--muted); font-size: 9px; letter-spacing: .1em; }
+    .contact { padding: 83px 0; background: var(--gold); color: var(--ink); }
+    .contact-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
+    .contact .eyebrow { color: #5f5137; }
+    .contact h2 { margin: 15px 0 0; font: 400 clamp(32px, 4vw, 48px)/1.15 var(--serif); letter-spacing: -.03em; }
+    .contact .button { flex: 0 0 auto; border: 1px solid rgba(32,36,33,.52); background: transparent; }
+    .contact .button:hover { background: var(--ink); color: var(--paper); }
+    footer { padding: 32px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .copyright, .footer-links { color: var(--muted); font-size: 10px; }
+    .footer-links { display: flex; gap: 25px; }
+    .footer-links a { transition: color .2s; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-address { color: var(--muted); font-size: 10px; letter-spacing: .02em; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 560px); }
+      .nav { height: 72px; }
+      .nav-links { gap: 19px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 10px 12px; }
+      .hero { min-height: 700px; min-height: min(760px, 96svh); }
+      .hero::before { inset: 0 0 0 0; background-position: 57% center; }
+      .hero::after { background: linear-gradient(90deg, rgba(32,36,33,.94), rgba(32,36,33,.57) 72%, rgba(32,36,33,.28)), linear-gradient(0deg, rgba(32,36,33,.5), transparent 50%); }
+      .hero-content { padding-top: 75px; }
+      .hero-note { right: 13px; bottom: 22px; font-size: 8px; }
+      .intro, .services { padding: 76px 0 82px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 24px; }
+      .intro .eyebrow { margin-top: 0; }
+      .section-head { display: block; margin-bottom: 34px; }
+      .section-head > p { margin-top: 18px; }
+      .cards { grid-template-columns: 1fr; }
+      .card, .card + .card { min-height: 215px; padding: 25px 22px 25px 0; border-left: 0; }
+      .card + .card { border-top: 1px solid var(--line); }
+      .card h3 { margin-top: 27px; }
+      .card-arrow { opacity: 1; transform: none; }
+      .testimonial { padding: 82px 0 85px; }
+      .contact { padding: 65px 0; }
+      .contact-inner { align-items: flex-start; flex-direction: column; }
+      .footer-inner { flex-wrap: wrap; }
+      .footer-address { order: 3; width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Atelier North home"><span class="brand-mark">A</span>ATELIER NORTH</a>
+      <div class="nav-links">
+        <a href="#approach">Our approach</a>
+        <a href="#services">Services</a>
+        <a href="#journal">Journal</a>
+        <a class="nav-cta" href="#contact">Start a project <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="eyebrow">Independent interior studio · Brooklyn, NY</div>
+          <h1 id="hero-title">Room to live.<br><span>Space to feel.</span></h1>
+          <p class="hero-copy">We create thoughtful, tactile interiors that make the everyday feel a little more extraordinary. Made for real life, and yours alone.</p>
+          <a class="button" href="#services">Explore our approach <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-note" aria-hidden="true">Spaces with a sense of self</div>
+    </section>
+    <section class="intro" id="approach" aria-labelledby="intro-title">
+      <div class="wrap intro-grid">
+        <div class="eyebrow">A more considered kind of design</div>
+        <h2 id="intro-title">Good spaces do more than look beautiful. They make you feel <em>at home.</em></h2>
+      </div>
+    </section>
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">What we do</div><h2 id="services-title">Room for possibility.</h2></div>
+          <p>From the first sketch to the final finishing touch, we make a considered process feel personal, clear and entirely your own.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><span class="card-number">01</span><h3>Full-service interiors</h3><p>A complete vision, thoughtfully brought to life. From spatial planning and materials to the pieces that make a room yours.</p><span class="card-arrow" aria-hidden="true">↗</span></article>
+          <article class="card"><span class="card-number">02</span><h3>Room refresh</h3><p>One room, a fresh perspective. We bring focus, flow and new energy to the spaces where life happens most.</p><span class="card-arrow" aria-hidden="true">↗</span></article>
+          <article class="card"><span class="card-number">03</span><h3>The finishing edit</h3><p>For the nearly-there home. A thoughtful layer of lighting, objects and textiles that brings everything into focus.</p><span class="card-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+    <section class="testimonial" id="journal" aria-label="Client testimonial">
+      <div class="wrap">
+        <div class="quote-mark" aria-hidden="true">“</div>
+        <blockquote>They understood how we wanted our home to feel before we had the words for it. Now every room feels unmistakably like us.</blockquote>
+        <div class="quote-credit">Maya &amp; James<span>Brooklyn brownstone · Full-service interiors</span></div>
+      </div>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <div><div class="eyebrow">Your next chapter starts here</div><h2 id="contact-title">Let's make room for it.</h2></div>
+        <a class="button" href="mailto:hello@ateliernorth.studio">Tell us what you're dreaming of <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">A</span>ATELIER NORTH</a>
+      <div class="footer-address">Brooklyn, New York &nbsp;·&nbsp; Working everywhere</div>
+      <div class="footer-links"><a href="mailto:hello@ateliernorth.studio">Email</a><a href="#contact">Instagram</a></div>
+      <div class="copyright">© <span id="year">2026</span> Atelier North</div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
